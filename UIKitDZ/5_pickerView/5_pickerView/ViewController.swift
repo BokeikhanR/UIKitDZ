@@ -65,7 +65,7 @@ class ViewController: UIViewController {
         view.addSubview(labelPassword)
         
         textFieldPassword = UITextField(frame: CGRect(x: 60, y: 395, width: 250, height: 100))
-        textFieldPassword.placeholder = "Напишите Password"
+        textFieldPassword.placeholder = "Напишите Password"ßß
         textFieldPassword.textAlignment = .left
         textFieldPassword.textColor = .systemIndigo
         textFieldPassword.isSecureTextEntry = true
