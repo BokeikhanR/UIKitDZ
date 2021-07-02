@@ -128,12 +128,16 @@ class PayViewController: UIViewController {
     }
     
     @objc func tappedPayButton(){
+        
         let alertController = UIAlertController(title: "Заказ оплачен!!!", message: "Ваш заказ доставят в течение 15 мин!!! Приятного аппетита.", preferredStyle: .alert)
-        let action = UIAlertAction(title: "Ok", style: .cancel, handler: nil)
+        let action = UIAlertAction(title: "Ok", style: .default) { (action) in
+            self.dismiss(animated: true)
+            self.delegate?.gotoBack()
+        }
         alertController.addAction(action)
         self.present(alertController, animated: true, completion: nil)
 
-        dismiss(animated: true)
-        delegate?.gotoBack()
+//        dismiss(animated: true)
+//        delegate?.gotoBack()
     }
 }

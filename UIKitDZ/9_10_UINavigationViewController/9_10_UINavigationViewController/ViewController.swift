@@ -49,7 +49,7 @@ class ViewController: UIViewController, UITextFieldDelegate {
         
         emailTextFild.frame = CGRect(x: 25, y: 280, width: 300, height: 30)
         emailTextFild.textAlignment = .left
-        self.emailTextFild.keyboardType = .numbersAndPunctuation
+        self.emailTextFild.keyboardType = .numberPad
         emailTextFild.placeholder = "Введите логин"
         passwordTextFild.clearsOnBeginEditing = true
         self.emailTextFild.delegate = self
