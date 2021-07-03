@@ -6,15 +6,15 @@
 //
 
 import UIKit
-
+  
 final class TimerViewController: UIViewController, UIPickerViewDelegate {
 
     @IBOutlet weak var pickerView: UIPickerView!
     
     
-    var hour: Int = 0
-     var minutes: Int = 0
-     var second: Int = 0
+     private var hour: Int = 0
+     private var minutes: Int = 0
+     private var second: Int = 0
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -29,7 +29,7 @@ final class TimerViewController: UIViewController, UIPickerViewDelegate {
 extension TimerViewController: UIDocumentPickerDelegate, UIPickerViewDataSource {
     
     func numberOfComponents(in pickerView: UIPickerView) -> Int {
-    3
+        3
     }
     
     func pickerView(_ pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
@@ -72,9 +72,4 @@ extension TimerViewController: UIDocumentPickerDelegate, UIPickerViewDataSource 
             break;
         }
     }
-    
-//    func pickerView(_ pickerView: UIPickerView, attributedTitleForRow row: Int, forComponent component: Int) -> NSAttributedString? {
-//        let string = "\(row)"
-//        return NSAttributedString(string: string, attributes: [NSAttributedString.Key.foregroundColor: UIColor.white])
-//    }
 }
