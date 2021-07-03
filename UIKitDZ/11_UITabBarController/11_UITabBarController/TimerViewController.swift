@@ -7,14 +7,14 @@
 
 import UIKit
 
-class TimerViewController: UIViewController, UIPickerViewDelegate {
+final class TimerViewController: UIViewController, UIPickerViewDelegate {
 
     @IBOutlet weak var pickerView: UIPickerView!
     
     
     var hour: Int = 0
-    var minutes: Int = 0
-    var second: Int = 0
+     var minutes: Int = 0
+     var second: Int = 0
     
     override func viewDidLoad() {
         super.viewDidLoad()
