@@ -11,8 +11,8 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
 
     var window: UIWindow?
     
-    let firstVC = ViewController()
-    let secondVC = SecondVC()
+    let firstVC = ViewPageVC()
+    let secondVC = SettingsVC()
 
     func scene(_ scene: UIScene, willConnectTo session: UISceneSession, options connectionOptions: UIScene.ConnectionOptions) {
         

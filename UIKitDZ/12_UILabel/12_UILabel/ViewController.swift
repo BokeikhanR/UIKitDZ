@@ -7,7 +7,7 @@
 
 import UIKit
 
-final class ViewController: UIViewController, UIPickerViewDelegate {
+final class ViewPageVC: UIViewController {
    
     private var colorPicker = UIPickerView()
     private var linePicker = UIPickerView()
@@ -19,9 +19,16 @@ final class ViewController: UIViewController, UIPickerViewDelegate {
     private var colorShadowPicker = UIPickerView()
     private var shadowColorArray = ["Gray", "Orange","Red", "Blue", "Yellow", "Green"]
     
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        self.configureSubviews()
+    }
+
+//MARK: - Methods
+    
+    private func configureSubviews(){
         //Label
         
         myLabel.frame = CGRect(x: 50, y: 100, width: 300, height: 100)
@@ -29,7 +36,7 @@ final class ViewController: UIViewController, UIPickerViewDelegate {
         myLabel.textAlignment = .left
         myLabel.numberOfLines = 0 //katar sani
         myLabel.lineBreakMode = .byWordWrapping //buinga sozben bolu
-        myLabel.text = "Hello world"
+        myLabel.text = "Hello world .dm,fnlkj n;kjn;kj.m,n; kj,nkjmnsdfjkn lhbukhjb kjhbiuokhjd "
         myLabel.font = UIFont.boldSystemFont(ofSize: 25)
         myLabel.adjustsFontSizeToFitWidth = true //podgon razmera
         myLabel.sizeToFit() //pokozat vsez slov
@@ -82,12 +89,10 @@ final class ViewController: UIViewController, UIPickerViewDelegate {
         self.view.addSubview(linePicker)
         
     }
-
-//MARK: - Methods
   
     //Method change slider
     
-    @objc func changeSlider(param: UISlider){
+    @objc private func changeSlider(param: UISlider){
         self.myLabel.font = UIFont.systemFont(ofSize:CGFloat(Int(param.value)))
     }
     
@@ -95,7 +100,7 @@ final class ViewController: UIViewController, UIPickerViewDelegate {
    
     //Method addButton and Alertcontroller
     
-    @objc func enterMethod(){
+    @objc private func enterMethod(){
         let alertController = UIAlertController(title: "Введите текст", message: "", preferredStyle: .alert)
         let alertAction = UIAlertAction(title: "Ok", style: .default) { [self] (action) in
             let text = alertController.textFields?.first
@@ -109,7 +114,7 @@ final class ViewController: UIViewController, UIPickerViewDelegate {
 
 //MARK: - Extesion Picker View
 
-extension ViewController: UIPickerViewDataSource {
+extension ViewPageVC: UIPickerViewDataSource {
     
     // Method of Number Components
     
@@ -134,7 +139,7 @@ extension ViewController: UIPickerViewDataSource {
 
 //MARK: - Extension Picker Delegate
 
-extension ViewController: UIDocumentPickerDelegate {
+extension ViewPageVC: UIPickerViewDelegate {
     
     // Method Picker names color
     

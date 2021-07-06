@@ -7,7 +7,7 @@
 
 import UIKit
 
-final class SecondVC: UIViewController {
+final class SettingsVC: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -15,6 +15,4 @@ final class SecondVC: UIViewController {
         self.title = "Page 2"
         self.view.backgroundColor = .blue
     }
-    
-
 }
