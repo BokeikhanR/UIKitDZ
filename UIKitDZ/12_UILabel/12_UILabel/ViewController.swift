@@ -12,7 +12,7 @@ final class ViewPageVC: UIViewController {
     private var colorPicker = UIPickerView()
     private var linePicker = UIPickerView()
     private var myLabel = UILabel()
-    private var mySlider = UISlider()
+    private var fontSizeSlider = UISlider()
     private var colorArray = ["Yellow", "Blue","Red", "Green", "Indigo", "Orange"]
     private var lineArray = ["1", "2", "3", "4", "5", "6"]
     
@@ -58,14 +58,14 @@ final class ViewPageVC: UIViewController {
         
         //Slider To Size
         
-        mySlider.frame = CGRect(x: 50, y: 300, width: 250, height: 10)
-        mySlider.maximumValue = 100.0
-        mySlider.minimumValue = 0.0
-        mySlider.value = 50
-        mySlider.maximumTrackTintColor = .systemRed
-        mySlider.minimumTrackTintColor = .systemGreen
-        mySlider.addTarget(self, action: #selector(changeSlider(param:)), for: .valueChanged)
-        view.addSubview(mySlider)
+        fontSizeSlider.frame = CGRect(x: 50, y: 300, width: 250, height: 10)
+        fontSizeSlider.maximumValue = 100.0
+        fontSizeSlider.minimumValue = 0.0
+        fontSizeSlider.value = 50
+        fontSizeSlider.maximumTrackTintColor = .systemRed
+        fontSizeSlider.minimumTrackTintColor = .systemGreen
+        fontSizeSlider.addTarget(self, action: #selector(changeSlider(param:)), for: .valueChanged)
+        view.addSubview(fontSizeSlider)
         
         //Shadow Picker
         
