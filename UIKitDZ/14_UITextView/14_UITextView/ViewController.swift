@@ -7,7 +7,7 @@
 
 import UIKit
 
-final class ViewController: UIViewController {
+final class BookViewController: UIViewController {
 
     private var myTextView = UITextView()
     private var sizeSlider = UISlider()
@@ -88,7 +88,7 @@ final class ViewController: UIViewController {
         modeSwitch.frame = CGRect(x: 50, y: 740, width: 0, height: 0)
         modeSwitch.isOn = false
         modeSwitch.thumbTintColor = .systemOrange
-        modeSwitch.addTarget(self, action: #selector(changeMode(param:)), for: .valueChanged)
+        modeSwitch.addTarget(self, action: #selector(changeMode2(param:)), for: .valueChanged)
         view.addSubview(modeSwitch)
     }
 
@@ -156,7 +156,7 @@ final class ViewController: UIViewController {
 //MARK: - @OBJC METHODS
 
     @objc func changeModeTextView(param: UISlider){
-        self.myTextView.font = UIFont.systemFont(ofSize: CGFloat(Int(param.value)))
+        myTextView.font = UIFont.systemFont(ofSize: CGFloat(Int(param.value)))
     }
 
     @objc func tappedButton(param: UIButton){
@@ -180,24 +180,14 @@ final class ViewController: UIViewController {
             return myTextView.textColor = .systemGray2
         }
     }
-    @objc func changeMode(param:UISwitch){
-        if modeSwitch.isOn == true {
-            myTextView.backgroundColor = .black
-            view.backgroundColor = .black
-        } else {
-            myTextView.backgroundColor = .gray
-            view.backgroundColor = .white
-        }
-    }
-
-    @objc func changeWeight(sender: Any ){
-        
+    @objc func changeMode2(param: UISwitch){
+        view.overrideUserInterfaceStyle = modeSwitch.isOn ? .dark : .light
     }
 }
 
 //MARK: Extensions Picker Data Source
 
-extension ViewController: UIPickerViewDataSource{
+extension BookViewController: UIPickerViewDataSource{
     func numberOfComponents(in pickerView: UIPickerView) -> Int {
         return 1
     }
@@ -214,13 +204,13 @@ extension ViewController: UIPickerViewDataSource{
 
 //MARK: Extension Picker Delegate
 
-extension ViewController: UIPickerViewDelegate{
+extension BookViewController: UIPickerViewDelegate{
     func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
 
        return fontPickerArray[row]
     }
     func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
-        myTextView.font = UIFont.init(name: fontPickerArray[row], size: CGFloat(sizeSlider.value))
+        myTextView.font = UIFont(name: fontPickerArray[row], size: CGFloat(sizeSlider.value))
     }
 }
 
