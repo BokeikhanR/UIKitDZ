@@ -33,7 +33,7 @@ class TimerViewController: UIViewController {
 //MARK: - IBActions
 
 //RESET Tapped
-    
+
     @IBAction func resetTapped(_ sender: Any) {
 
         let alert = UIAlertController(title: "Reset Timer? ",
