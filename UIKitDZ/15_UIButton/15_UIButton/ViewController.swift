@@ -7,14 +7,12 @@
 
 import UIKit
 
-class TimerViewController: UIViewController {
+final class TimerViewController: UIViewController {
 
 //MARK: - IBOutlets
 
     @IBOutlet weak var timerLabel: UILabel!
-
     @IBOutlet weak var startButton: UIButton!
-
     @IBOutlet weak var resetButton: UIButton!
 
 
@@ -22,7 +20,7 @@ class TimerViewController: UIViewController {
 
     private var timer = Timer()
     private var count = 0
-    private var timerCouting = false
+    private var isTimerCouting = false
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -34,7 +32,7 @@ class TimerViewController: UIViewController {
 
 //RESET Tapped
 
-    @IBAction func resetTapped(_ sender: Any) {
+    @IBAction func resetAction(_ sender: Any) {
 
         let alert = UIAlertController(title: "Reset Timer? ",
                                       message: "Вы хотите все снова начать ? ",
@@ -57,15 +55,15 @@ class TimerViewController: UIViewController {
 //START Tapped
     @IBAction func startTapped(_ sender: Any) {
 
-        if (timerCouting) {
+        if isTimerCouting {
 
-            timerCouting = false
+            isTimerCouting = false
             timer.invalidate()
             startButton.setTitle("START", for: .normal)
             startButton.setTitleColor(UIColor.green, for: .normal)
         } else {
 
-            timerCouting = true
+            isTimerCouting = true
             startButton.setTitle("STOP", for: .normal)
             startButton.setTitleColor(UIColor.red, for: .normal)
             timer = Timer.scheduledTimer(timeInterval: 1, target: self,
